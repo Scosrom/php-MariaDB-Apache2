@@ -134,6 +134,11 @@ Vamos hasta el la carpeta src y ejecutamos el siguiente comando para pegar todo 
 
 <code> cp -r * /var/www/html </code>
 
+Accedemos a la web utilizando http://mi_ip_publica
+
+![13](https://github.com/Scosrom/practicas/assets/114906778/69bf33a8-d057-4b54-ac05-f88b5b73aa0d)
+
+
 
 
 
