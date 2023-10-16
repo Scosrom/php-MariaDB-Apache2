@@ -98,6 +98,28 @@ Actualizamos privilegios.
 
 <code> FLUSH PRIVILEGES; </code>
 
+### Configuramos Base de datos.
+
+  1. Creamos la BD
+
+     CREATE DATABASE lamp_db CHARSET utf8mb4;
+     
+  2. Entramos en la BD
+
+     USE lamp_db;
+     
+  3. Creamos Tabla
+
+     CREATE TABLE users (
+  id int(11) NOT NULL auto_increment,
+  name varchar(100) NOT NULL,
+  age int(3) NOT NULL,
+  email varchar(100) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 ## 3. Instalamos php y phpmyadmin
 
 <code> apt install php -y </code>
@@ -115,11 +137,16 @@ Añadimos una contraseña y la confirmamos:
 
 ![11](https://github.com/Scosrom/practicas/assets/114906778/cab47573-c09f-45d5-afc1-58018cc54a38)
 
-## 4. Congifuramos el archivo /etc/www/html
+## 5. Congifuramos el archivo /etc/www/html
 
 Descargamos archivo scr del repositorio de github. 
 
-<code> git clone 
+<code> git clone https://github.com/Scosrom/practicas.git </code>
+
+Vamos hasta el la carpeta src y ejecutamos el siguiente comando para pegar todo el contenido en /var/www/html
+
+<code> cp -r * /var/www/html </code>
+
 
 
 
