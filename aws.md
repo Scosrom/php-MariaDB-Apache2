@@ -9,6 +9,8 @@
 
 ## 1. Creamos servidor en AWS
 
+1. Elegimos SO y tipo de instancia
+   
 El sistema operativo que vamos a Utilizar es Debian 12
 Tipo de instancia : t2.micro
 
@@ -16,24 +18,24 @@ Tipo de instancia : t2.micro
 
 ![2](https://github.com/Scosrom/practicas/assets/114906778/d93ffb6b-c003-4511-aaae-1d63332ba369)
 
-Creamos un par de claves:
+2. Creamos un par de claves:
 
 ![3](https://github.com/Scosrom/practicas/assets/114906778/7e999806-520e-4221-a318-ccfbcdb28ccf)
 
-Configuramos la red:
+3. Configuramos la red:
 
 ![4](https://github.com/Scosrom/practicas/assets/114906778/5a039b98-6459-48a2-a6c7-199f469d2b23)
 
 En esta practica no vamos a modificar los valores de la red por lo tanto podemos asignar la red (default).
 
-Configuramos los puertos:
+4. Configuramos los puertos:
 
 Como vamos a utilizar el servicio http tenemos que abrir los puertos, en este caso el puerto 80.
 En origen de la conexión vamos a indicar que dispositivos se pueden conectar a nuestro puerto, 0.0.0.0/0 reconoce que cualquier IP se puede conectar a nuestro servicio. Sería más seguro indicar la IP desde la que me voy a conectar. 
 
 ![5](https://github.com/Scosrom/practicas/assets/114906778/102a3e65-f0c8-4240-9c98-875ae3939255)
 
-Lanzamos instancia y nos conectamos por SSH
+5. Lanzamos instancia y nos conectamos por SSH
 
 ![6](https://github.com/Scosrom/practicas/assets/114906778/71043521-ee33-440b-8872-9b6d57839d1e)
 
@@ -88,21 +90,21 @@ Accedemos a MariaDB, como aún no hemos configurado ninguna contraseña podemos 
 
    
 
-2. Creamos un Usuario
+4. Creamos un Usuario
    
 <code> CREATE USER IF NOT EXISTS 'lamp_user'@'%'; </code>
 
 
-Cambiamos la contraseña
+5. Cambiamos la contraseña
 
 <code> ALTER USER 'lamp_user'@'%' IDENTIFIED BY 'lamp_password'; </code>
 
-3. Concedemos Privilegios.
+6. Concedemos Privilegios.
    
   <code> GRANT ALL PRIVILEGES ON lamp_db.* TO 'lamp_user'@'%';
 */ </code>
 
-Actualizamos privilegios.
+7. Actualizamos privilegios.
 
 <code> FLUSH PRIVILEGES; </code>
 
@@ -113,11 +115,11 @@ Actualizamos privilegios.
 
 <code> apt install phpmyadmin -y </code>
 
-Marcamos el servicio apache2
+1. Marcamos el servicio apache2
 
 ![9](https://github.com/Scosrom/practicas/assets/114906778/e68032f4-cd17-4df5-bd95-b394f956bddc)
 
-Añadimos una contraseña y la confirmamos:
+2. Añadimos una contraseña y la confirmamos:
 
 ![10](https://github.com/Scosrom/practicas/assets/114906778/e9ecb251-0cec-4626-8d1b-010bf13a3a8f)
 
@@ -126,15 +128,15 @@ Añadimos una contraseña y la confirmamos:
 
 ## 5. Congifuramos el archivo /etc/www/html
 
-Descargamos archivo scr del repositorio de github. 
+1. Descargamos archivo scr del repositorio de github. 
 
 <code> git clone https://github.com/Scosrom/practicas.git </code>
 
-Vamos hasta el la carpeta src y ejecutamos el siguiente comando para pegar todo el contenido en /var/www/html
+2. Vamos hasta el la carpeta src y ejecutamos el siguiente comando para pegar todo el contenido en /var/www/html
 
 <code> cp -r * /var/www/html </code>
 
-Accedemos a la web utilizando http://mi_ip_publica
+3. Accedemos a la web utilizando http://mi_ip_publica
 
 ![13](https://github.com/Scosrom/practicas/assets/114906778/69bf33a8-d057-4b54-ac05-f88b5b73aa0d)
 
