@@ -55,7 +55,8 @@ Comprobamos que el servicio este activo
 
 <code> systemctl status apache2 </code>
 
-![7](https://github.com/Scosrom/practicas/assets/114906778/6eceda8d-eebb-47ac-982e-88c25edc7ff9)
+![8](https://github.com/Scosrom/practicas/assets/114906778/57022d50-19a1-4618-9ad0-227346a1a115)
+
 
 Verificamos que nuestro servicio este activo. 
 
@@ -69,56 +70,41 @@ Accedemos a MariaDB, como aún no hemos configurado ninguna contraseña podemos 
 
 1. Creamos una Base de datos
 
-  <code>  CREATE DATABASE nombre_de_base_de_datos; </code> 
+<code> CREATE DATABASE lamp_db CHARSET utf8mb4; </code>
+
+2. Entramos en la BD
+
+   <code> USE lamp_db; </code>
+
+3. Creamos Tabla
+
+   <code>   CREATE TABLE users (
+  id int(11) NOT NULL auto_increment,
+  name varchar(100) NOT NULL,
+  age int(3) NOT NULL,
+  email varchar(100) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; </code>
+
+   
 
 2. Creamos un Usuario
    
-<code> CREATE USER 'nombre_de_usuario'@'localhost' IDENTIFIED BY 'tu_contraseña'; </code>
+<code> CREATE USER IF NOT EXISTS 'lamp_user'@'%'; </code>
 
-( Para esta practica estamos utilizando el siguiente usuario)
-
-
-<code> CREATE USER IF NOT EXISTS 'lamp_user'@'%';  </code>
 
 Cambiamos la contraseña
 
 <code> ALTER USER 'lamp_user'@'%' IDENTIFIED BY 'lamp_password'; </code>
 
 3. Concedemos Privilegios.
-
-   Para esta practica utilizamos
    
   <code> GRANT ALL PRIVILEGES ON lamp_db.* TO 'lamp_user'@'%';
 */ </code>
 
-  Si quieres poner otro puedes utilizar:
-
-<code> GRANT ALL PRIVILEGES ON mi_db.* TO 'usuario'@'localhost'; </code>
-
 Actualizamos privilegios.
 
 <code> FLUSH PRIVILEGES; </code>
-
-### Configuramos Base de datos.
-
-  1. Creamos la BD
-
-     CREATE DATABASE lamp_db CHARSET utf8mb4;
-     
-  2. Entramos en la BD
-
-     USE lamp_db;
-     
-  3. Creamos Tabla
-
-     CREATE TABLE users (
-  id int(11) NOT NULL auto_increment,
-  name varchar(100) NOT NULL,
-  age int(3) NOT NULL,
-  email varchar(100) NOT NULL,
-  PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 
 ## 3. Instalamos php y phpmyadmin
