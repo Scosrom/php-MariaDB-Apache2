@@ -2,6 +2,7 @@
 
 ***En esta practica vamos a utilizar:***
 
+EN DEBIAN 12
 - Servidor apache2
 - Php
 - Base de datos MariaDB
