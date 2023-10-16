@@ -130,7 +130,7 @@ Accedemos a MariaDB, como aún no hemos configurado ninguna contraseña podemos 
 
 1. Descargamos archivo scr del repositorio de github. 
 
-<code> git clone https://github.com/Scosrom/practicas.git </code>
+<code> git clone https://github.com/Scosrom/php-MariaDB-Apache2.git </code>
 
 2. Vamos hasta el la carpeta src y ejecutamos el siguiente comando para pegar todo el contenido en /var/www/html
 
@@ -139,7 +139,6 @@ Accedemos a MariaDB, como aún no hemos configurado ninguna contraseña podemos 
 3. Accedemos a la web utilizando http://mi_ip_publica
 
 ![13](https://github.com/Scosrom/practicas/assets/114906778/69bf33a8-d057-4b54-ac05-f88b5b73aa0d)
-
 
 
 
