@@ -79,14 +79,15 @@ Accedemos a MariaDB, como aún no hemos configurado ninguna contraseña podemos 
    <code> USE lamp_db; </code>
 
 3. Creamos Tabla
-
-   <code>   CREATE TABLE users (
+```
+  CREATE TABLE users (
   id int(11) NOT NULL auto_increment,
   name varchar(100) NOT NULL,
   age int(3) NOT NULL,
   email varchar(100) NOT NULL,
   PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8; </code>
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
 
    
 
@@ -100,9 +101,10 @@ Accedemos a MariaDB, como aún no hemos configurado ninguna contraseña podemos 
 <code> ALTER USER 'lamp_user'@'%' IDENTIFIED BY 'lamp_password'; </code>
 
 6. Concedemos Privilegios.
-   
-  <code> GRANT ALL PRIVILEGES ON lamp_db.* TO 'lamp_user'@'%';
-*/ </code>
+  ``` 
+   GRANT ALL PRIVILEGES ON lamp_db.* TO 'lamp_user'@'%';
+*/
+```
 
 7. Actualizamos privilegios.
 
